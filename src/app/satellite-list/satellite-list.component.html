@@ -1,0 +1,22 @@
+<ng-container *ngIf="satellites$ | async as satellites">
+  <main>
+    <section class="container">
+      <mat-card
+        *ngFor="let sat of satellites"
+        [routerLink]="['/', sat.id]"
+      >
+        <mat-card-header>
+          <img
+            width="64"
+            mat-card-avatar
+            loading="lazy"
+            alt="FP Satellite icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/FP_Satellite_icon.svg/64px-FP_Satellite_icon.svg.png"
+          />
+          <mat-card-title>{{ sat.satelliteNumber }}</mat-card-title>
+          <mat-card-subtitle>{{ sat.name }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </section>
+  </main>
+</ng-container>

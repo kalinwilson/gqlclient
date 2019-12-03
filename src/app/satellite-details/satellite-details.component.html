@@ -1,0 +1,12 @@
+<ng-container *ngIf="satelliteDetails$ | async as satelliteDetails">
+  <section style="padding-top: 20px;">
+    <mat-card style="width: 400px; margin: auto;">
+      <mat-card-header>
+        <mat-card-title>{{ satelliteDetails.satelliteNumber + ' - ' + satelliteDetails.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p *ngFor="let ic of satelliteDetails.integratorControls">{{ ic.application }} - {{ ic.id }}</p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</ng-container>
