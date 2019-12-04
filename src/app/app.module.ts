@@ -9,6 +9,8 @@ import { SatelliteListComponent } from './satellite-list/satellite-list.componen
 import { SatelliteDetailsComponent } from './satellite-details/satellite-details.component';
 
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { MatCardModule } from '@angular/material/card';
     SatelliteListComponent,
     SatelliteDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    GraphQLModule,
-    HttpClientModule,
-    MatCardModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        GraphQLModule,
+        HttpClientModule,
+        MatCardModule,
+        MatGridListModule,
+        MatPaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,14 @@
 # Gqlclient
 
+Based on examples at (spacex graphql demo)[https://github.com/arjunyel/angular-spacex-graphql-codegen]
+         (video)[https://www.youtube.com/watch?v=7wzR4Ig5pTI]
+  And the (Apollo Angular site)[https://www.apollographql.com/docs/angular/]
+
+## Build and Run:
+ - `npm install`
+ - `ng serve`
+ - Open Browser to http://localhost:4200. Make sure gqlserver, the demo Java GraphQL server is running at localhost:9002.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
 ## Development server

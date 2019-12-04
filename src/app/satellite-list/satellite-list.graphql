@@ -1,7 +1,7 @@
 # src/app/satellite-list/satellite-list.graphql
 
-query satelliteList {
-  satellites(categories: [1], orderBy: satelliteNumber_ASC){
+query satelliteList($page: Int, $limit: Int!) {
+  satellites(categories: [1], orderBy: satelliteNumber_ASC, page: $page, limit: $limit){
     id
     name
     satelliteNumber

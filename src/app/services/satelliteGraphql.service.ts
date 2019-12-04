@@ -36,7 +36,9 @@ export type ConsolidatedQuery = {
 export type ConsolidatedQuerySatellitesArgs = {
   satelliteNumbers?: Maybe<Array<Maybe<Scalars['Int']>>>,
   categories?: Maybe<Array<Maybe<Scalars['Int']>>>,
-  orderBy?: Maybe<SatelliteOrderByInput>
+  orderBy?: Maybe<SatelliteOrderByInput>,
+  page?: Maybe<Scalars['Int']>,
+  limit: Scalars['Int']
 };
 
 
@@ -196,7 +198,10 @@ export type SatelliteDetailsControlsQuery = (
   )> }
 );
 
-export type SatelliteListQueryVariables = {};
+export type SatelliteListQueryVariables = {
+  page?: Maybe<Scalars['Int']>,
+  limit: Scalars['Int']
+};
 
 
 export type SatelliteListQuery = (
@@ -257,8 +262,8 @@ export const SatelliteDetailsControlsDocument = gql`
     
   }
 export const SatelliteListDocument = gql`
-    query satelliteList {
-  satellites(categories: [1], orderBy: satelliteNumber_ASC) {
+    query satelliteList($page: Int, $limit: Int!) {
+  satellites(categories: [1], orderBy: satelliteNumber_ASC, page: $page, limit: $limit) {
     id
     name
     satelliteNumber
